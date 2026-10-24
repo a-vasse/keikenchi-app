@@ -10,5 +10,3 @@ Rate your experience with each of Japan's 47 prefectures from 0 to 5 and get a s
 | 3 | 訪問 | Walked around, no overnight stay |
 | 4 | 宿泊 | Stayed overnight |
 | 5 | 居住 | Lived there (about 3+ months) |
-
-Answers are saved in your browser's localStorage only.
