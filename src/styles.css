@@ -1,0 +1,76 @@
+:root{
+  color-scheme:light;
+  --bg:#f3f1ec;--surface:#fbfaf7;--ink:#1c2233;--mute:#5d6272;--line:#d9d5cb;
+  --l0:#e4e1d8;--t0:#6b665b;
+  --l1:#d3dcea;--t1:#233352;
+  --l2:#a6bcdc;--t2:#12213d;
+  --l3:#6a8fc2;--t3:#0b162b;
+  --l4:#2f5897;--t4:#ffffff;
+  --l5:#c2381f;--t5:#ffffff;
+  --focus:#c2381f;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#15171d;--surface:#1d2029;--ink:#eceae4;--mute:#a1a4b0;--line:#33374a;
+    --l0:#2a2d38;--t0:#8d8f9a;
+    --l1:#34425e;--t1:#d3dcee;
+    --l2:#4a6791;--t2:#ffffff;
+    --l3:#6f93c6;--t3:#0c1424;
+    --l4:#a9c4ec;--t4:#0c1424;
+    --l5:#ff8062;--t5:#240c05;
+    --focus:#ff8062;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#15171d;--surface:#1d2029;--ink:#eceae4;--mute:#a1a4b0;--line:#33374a;
+  --l0:#2a2d38;--t0:#8d8f9a;
+  --l1:#34425e;--t1:#d3dcee;
+  --l2:#4a6791;--t2:#ffffff;
+  --l3:#6f93c6;--t3:#0c1424;
+  --l4:#a9c4ec;--t4:#0c1424;
+  --l5:#ff8062;--t5:#240c05;
+  --focus:#ff8062;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 "Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif}
+main{max-width:720px;margin:0 auto;padding:20px 16px 48px}
+h1{font:800 1.5rem/1.2 "Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;margin:0 0 4px}
+.sub{margin:0 0 18px;color:var(--mute);font-size:.9rem}
+.score{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.score b{font:800 4rem/1 "Shippori Mincho",serif;letter-spacing:-.02em}
+.score span{color:var(--mute)}
+.bar{height:8px;background:var(--l0);border-radius:4px;overflow:hidden;margin-bottom:18px}
+.bar i{display:block;height:100%;width:0;background:var(--l5);transition:width .25s}
+.map{display:grid;grid-template-columns:repeat(12,1fr);gap:3px;margin-bottom:16px}
+.t{aspect-ratio:1;border:0;border-radius:6px;padding:0;cursor:pointer;font:700 clamp(.55rem,2.3vw,.85rem)/1.1 "Zen Kaku Gothic New",sans-serif;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.t[data-l="0"]{background:var(--l0);color:var(--t0)}
+.t[data-l="1"]{background:var(--l1);color:var(--t1)}
+.t[data-l="2"]{background:var(--l2);color:var(--t2)}
+.t[data-l="3"]{background:var(--l3);color:var(--t3)}
+.t[data-l="4"]{background:var(--l4);color:var(--t4)}
+.t[data-l="5"]{background:var(--l5);color:var(--t5)}
+.t[aria-pressed="true"]{outline:3px solid var(--ink);outline-offset:1px}
+.t:focus-visible,button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:16px}
+.panel h2{font:700 1.05rem/1.3 "Zen Kaku Gothic New",sans-serif;margin:0 0 10px}
+.panel h2 small{font-weight:400;color:var(--mute)}
+.lv{display:grid;gap:6px}
+.lv button{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;text-align:left;align-items:center;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:8px 10px;font:inherit;cursor:pointer}
+.lv button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.sw{grid-row:span 2;width:34px;height:34px;border-radius:6px;display:flex;align-items:center;justify-content:center;font:800 1rem "Shippori Mincho",serif}
+.lv strong{font-weight:700}
+.lv em{font-style:normal;color:var(--mute);font-size:.85rem}
+.counts{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:16px;text-align:center;font-size:.8rem;color:var(--mute)}
+.counts div{padding:6px 2px;border-radius:6px;background:var(--surface);border:1px solid var(--line)}
+.counts b{display:block;font:800 1.25rem/1.2 "Shippori Mincho",serif;color:var(--ink)}
+.acts{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.acts button{font:500 .95rem "Zen Kaku Gothic New",sans-serif;padding:9px 16px;border-radius:8px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer}
+.acts button.g{background:transparent;color:var(--ink);border-color:var(--line)}
+#msg{color:var(--mute);font-size:.85rem}
+.note{margin:18px 0 0;color:var(--mute);font-size:.8rem}
