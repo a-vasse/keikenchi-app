@@ -1,4 +1,3 @@
-// Static data. col/row place each prefecture on the 12-column tile map (0-indexed).
 export const PREFECTURES = [
   ["Hokkaido", "北海道", 11, 0], ["Aomori", "青森", 10, 1], ["Akita", "秋田", 10, 2], ["Iwate", "岩手", 11, 2],
   ["Yamagata", "山形", 9, 3], ["Miyagi", "宮城", 11, 3], ["Niigata", "新潟", 8, 4], ["Fukushima", "福島", 10, 3],
@@ -15,7 +14,6 @@ export const PREFECTURES = [
   ["Okinawa", "沖縄", 0, 11],
 ].map(([id, ja, col, row]) => ({ id, ja, col, row }));
 
-// Index in this array is the point value.
 export const LEVELS = [
   { ja: "未踏", en: "Never been", desc: "Haven't even brushed past it" },
   { ja: "通過", en: "Passed through", desc: "By train or car, or a ferry that docked there. Flying over doesn't count" },
